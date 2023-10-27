@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- 屬性設定網頁的語言 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 搜尋引擎找到之後的簡介,以及可使搜尋簡介內容關鍵字 -->
+    <meta name="description" content="表單製作" />
+    <!-- 讓搜尋引擎容易找到 -->
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="LeonLiu" />
+    <title>故宮問卷調查</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="名子">姓名:</label>
+      <input type="text" name="姓名" id="名子" />
+      <label for="信箱">信箱</label>
+      <!--將email 設定成required  這input就會變成"必須輸入"-->
+      <input type="email" name="email" id="信箱" required />
+      <!-- checked 將checkbox 初始就給打勾-->
+      <input type="checkbox" name="電子報" id="電子報" value="訂閱" checked />
+      <label for="電子報">訂閱電子報</label>
+      <button type="submit">提交表單</button>
+      <input type="file" name="" id="" />
+      <!-- <label for="email">email:</label>
+      <input type="text" name="email" id="email" />
+      <label for="password">密碼:</label>
+      <input type="password" name="password" id="password" />
+      <button>登入系統</button> -->
+    </form>
+  </body>
+</html>
