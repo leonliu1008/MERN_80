@@ -12,6 +12,7 @@
     <title>故宮問卷調查</title>
   </head>
   <body>
+    <button>這是一個按鈕</button>
     <form action="">
       <label for="名子">姓名:</label>
       <input
@@ -20,8 +21,25 @@
         id="名子"
         maxlength="6"
         minlength="2"
+        ㄋ
         placeholder="請輸入真實姓名"
       />
+
+      <label for="license">駕照:</label>
+      <select name="license" id="license" required>
+        <option></option>
+        <option value="car">汽車駕照</option>
+        <option value="motorcycle">機車駕照</option>
+        <option value="all">汽機車都有</option>
+      </select>
+
+      <label for="gender">性別:</label>
+      <input type="radio" name="gender" id="male" value="male" checked />
+      <label for="male">男性</label>
+      <input type="radio" name="gender" id="female" value="female" required />
+      <label for="female">女性</label>
+      <input type="radio" name="gender" id="other" value="other" />
+      <label for="other">其他</label>
       <label for="信箱">信箱:</label>
       <!--將email 設定成required  這input就會變成"必須輸入"-->
       <input type="email" name="email" id="信箱" required />
@@ -47,10 +65,40 @@
         max="120"
         step="0.1"
       />
+      <label for="身高">身高:</label>
+      100<input
+        type="range"
+        name="身高"
+        id=""
+        min="100"
+        max="250"
+        step="1"
+      />250
       <!-- checked 將checkbox 初始就給打勾-->
       <input type="checkbox" name="電子報" id="電子報" value="訂閱" checked />
       <label for="電子報">訂閱電子報</label>
-      <button type="submit">提交表單</button>
+
+      <label for="area">地區:</label>
+      <input list="area-list" type="text" name="area" id="area" />
+      <datalist id="area-list">
+        <option value="基隆市">基隆市</option>
+        <option value="台北市">台北市</option>
+        <option value="新北市">新北市</option>
+        <option value="桃園市">桃園市</option>
+        <option value="新竹縣">新竹縣</option>
+        <option value="新竹市">新竹市</option>
+      </datalist>
+
+      <label for="suggestion">給網站的建議</label>
+      <textarea
+        name="suggestion"
+        id="suggestion"
+        cols="60"
+        rows="20"
+        placeholder="填寫給網站的建議"
+      ></textarea>
+
+      <button>提交表單</button>
       <input type="file" name="" id="" />
       <!-- <label for="email">email:</label>
       <input type="text" name="email" id="email" />
