@@ -1,14 +1,13 @@
-h1 {
-  color: rgba(70, 231, 16, 0.877);
+div.link1 a {
+  color: red;
 }
-h2 {
-  color: blueviolet;
+
+div.link2 a,
+p {
+  color: rgb(6, 92, 6);
+  font-size: 28px;
 }
-table,
-tr,
-td,
-th {
-  color: #bdcef5;
-  border: 1px solid black;
-  border-collapse: collapse;
+
+input[type="text"] {
+  color: rgb(4, 4, 209);
 }

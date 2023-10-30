@@ -1,0 +1,33 @@
+element selector h2 {
+  color: green;
+}
+
+/*grouping selector*/
+table,
+tr,
+td,
+th {
+  color: #759cf7;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/*id selector*/
+#first-paragraph {
+  color: rgb(14, 82, 145);
+}
+
+/*class selector*/
+.brown-text {
+  color: brown;
+}
+
+.large-text {
+  font-size: 18px;
+}
+
+/*element + class 並用*/
+a.secondWeb {
+  font-size: 28px;
+  color: rgb(172, 160, 5);
+}
