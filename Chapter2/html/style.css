@@ -1,0 +1,14 @@
+h1 {
+  color: rgba(70, 231, 16, 0.877);
+}
+h2 {
+  color: blueviolet;
+}
+table,
+tr,
+td,
+th {
+  color: #bdcef5;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
