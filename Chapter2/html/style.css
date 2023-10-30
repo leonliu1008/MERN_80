@@ -19,3 +19,21 @@ input[type="text"] {
 h1 {
   color: rgb(243, 9, 9);
 }
+
+/*pseudo-class*/
+.pseudo-hover:hover {
+  color: rgb(4, 4, 209);
+  font-weight: bold;
+}
+
+/*pseudo-element*/
+p::before {
+  content: ">";
+  color: blue;
+  font-weight: bold;
+}
+
+/*pseudo-element(控制頁面反白的顏色)*/
+*::selection {
+  background-color: lightgreen;
+}
