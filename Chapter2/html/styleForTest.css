@@ -1,4 +1,5 @@
-element selector h2 {
+/*element selector*/
+h2 {
   color: green;
 }
 
