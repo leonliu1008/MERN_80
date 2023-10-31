@@ -1,3 +1,27 @@
 h1 {
   font-size: 32px;
+  letter-spacing: 2px;
+}
+body {
+  background-color: rgb(241, 221, 191);
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: blue;
+}
+
+p {
+  text-indent: 2rem;
+}
+
+table,
+tr,
+td,
+th {
+  color: #759cf7;
+  border: 1px solid black;
+  text-align: center;
+  border-collapse: collapse;
 }
