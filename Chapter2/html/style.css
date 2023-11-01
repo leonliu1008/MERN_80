@@ -3,13 +3,19 @@ h1 {
   letter-spacing: 2px;
 }
 body {
-  background-color: rgb(241, 221, 191);
+  /*background-color: rgb(241, 221, 191);*/
   font-family: "Noto Sans TC", sans-serif;
+  /* 背景顏色及透明度，這裡的0.5表示50%的透明度 */
+  /* 背景圖像與背景顏色的混合模式，這裡使用 lighten 混合模式 */
+  background-image: url(./images/故宮圖片3.jpeg);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
 }
 
 h1 {
   text-align: center;
   color: blue;
+  background-color: rgb(110, 107, 107);
 }
 
 p {
@@ -20,7 +26,7 @@ table,
 tr,
 td,
 th {
-  color: #759cf7;
+  color: #5282f1;
   border: 1px solid black;
   text-align: center;
   border-collapse: collapse;
