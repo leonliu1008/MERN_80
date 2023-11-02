@@ -16,3 +16,8 @@ h1 {
   margin: 0 80vh;
   padding: 10px;
 }
+
+.myClass {
+  display: block;
+  background-color: antiquewhite;
+}
