@@ -1,0 +1,27 @@
+div.container {
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  position: relative;
+}
+
+div.box {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  position: relative;
+  animation: changeColor 2s ease-in 0s calc(10) alternate forwards;
+}
+
+@keyframes changeColor {
+  from {
+    background-color: aqua;
+    top: 0px;
+    left: 0px;
+  }
+  to {
+    top: 400px;
+    left: 400px;
+    background-color: red;
+  }
+}

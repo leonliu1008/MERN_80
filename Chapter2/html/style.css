@@ -6,18 +6,51 @@ h1 {
   border: 2px solid black; /*外匡*/
   border-radius: 10px; /*四角半徑,使更圓滑*/
   margin: 0rem 30rem;
+
+  /*等2秒才會轉換顏色,若要都改的話 可以使用 all*/
+  transition: background-color 2s;
+}
+
+h1:hover {
+  background-color: green;
+}
+
+.img:hover {
+  transform: scale(2);
 }
 
 .link2 {
+  width: 300px;
   border: 2px solid black;
   text-align: center;
   background-color: aquamarine;
   border-radius: 5px;
-  margin: 0 80vh;
+  margin: 5vh;
   padding: 10px;
+  box-sizing: border-box;
 }
 
 .myClass {
   display: block;
   background-color: antiquewhite;
+}
+
+.tdName:hover {
+  background-color: rgb(237, 243, 157);
+}
+
+.table-2 {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.tr-3 th,
+.tr-4 td,
+.tr-5 td,
+.tr-6 td {
+  color: blue;
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
 }
