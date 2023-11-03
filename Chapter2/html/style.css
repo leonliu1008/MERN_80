@@ -20,14 +20,22 @@ h1:hover {
 }
 
 .link2 {
-  width: 300px;
+  position: relative;
   border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  margin: 5px 45%;
+  flex-direction: column;
+}
+
+.link2-box-1 {
   text-align: center;
-  background-color: aquamarine;
-  border-radius: 5px;
-  margin: 5vh;
-  padding: 10px;
-  box-sizing: border-box;
+  border: 1px solid black;
+}
+.link2-box-2 {
+  size: 5px;
+  text-align: center;
+  border: 1px solid black;
 }
 
 .myClass {
