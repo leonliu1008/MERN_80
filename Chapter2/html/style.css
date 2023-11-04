@@ -19,6 +19,19 @@ h1:hover {
   transform: scale(2);
 }
 
+.imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgContainer div {
+  flex: 1 1 200px;
+}
+
+.imgContainer div img {
+  width: 100%;
+}
+
 .link2 {
   position: relative;
   border: 2px solid black;
@@ -36,6 +49,10 @@ h1:hover {
   size: 5px;
   text-align: center;
   border: 1px solid black;
+}
+
+.link2-box-2 p {
+  margin: 2px;
 }
 
 .myClass {
