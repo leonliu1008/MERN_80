@@ -182,19 +182,13 @@ section.taiwan ul {
 }
 
 section.taiwan {
-  position: relative; /* 父元素需要相對定位 */
+  position: relative;
 }
 
-section.taiwan .background-image {
-  position: absolute; /* 子元素需要絕對定位 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(./images/meilktea2.jpg);
-  background-size: contain;
-  opacity: 0.3;
-  z-index: -1; /* 背景圖片置于其他元素下方 */
+main div.taiwan {
+  flex: 1 1 500;
+  position: absolute;
+  z-index: -1;
 }
 
 .china h3 {
