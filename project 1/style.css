@@ -212,3 +212,9 @@ main div.taiwan {
   background-color: rgb(86, 224, 192);
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
