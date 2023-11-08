@@ -44,7 +44,7 @@ div.container {
 .box5 {
   background-color: brown;
   position: absolute;
-  top: 30px;
+  top: 130px;
   left: 50px;
   z-index: 2;
 }
