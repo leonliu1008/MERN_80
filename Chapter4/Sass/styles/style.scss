@@ -1,0 +1,61 @@
+$themeColor: red;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "./header";
+@mixin flexsize($size) {
+  flex: 1 1 $size;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  //   如果視窗縮小,會使得flex item自動換行
+  flex-wrap: wrap;
+  > div.box1 {
+    flex: 1 1 50%;
+  }
+  > div.box2 {
+    flex: 1 1 50%;
+  }
+  > div.box1,
+  > div.box2 {
+    h1 {
+      color: $themeColor;
+      &:hover {
+        color: green;
+      }
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+  > div.smallbox1 {
+    flex: 1 1 50%;
+    width: 250px;
+    height: 250px;
+    background-color: aqua;
+  }
+  > div.smallbox2 {
+    flex: 1 1 50%;
+    width: 250px;
+    height: 250px;
+    background-color: rgb(0, 255, 55);
+  }
+  > div.smallbox3 {
+    @include flexsize(30%);
+    width: 250px;
+    height: 250px;
+    background-color: rgb(255, 230, 0);
+  }
+  > div.smallbox4 {
+    @include flexsize(70%);
+    width: 250px;
+    height: 250px;
+    background-color: rgb(234, 0, 255);
+  }
+}

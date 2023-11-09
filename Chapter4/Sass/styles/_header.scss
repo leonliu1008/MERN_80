@@ -1,0 +1,16 @@
+header {
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem;
+    ul {
+      li {
+        a {
+          color: red;
+          text-decoration: none;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
