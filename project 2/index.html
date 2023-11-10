@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>日本旅遊推薦</title>
     <meta name="author" content="Leon Liu" />
+    <link rel="icon" href="./milkTea.ico">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -39,5 +40,45 @@
         </ul>
       </nav>
     </header>
+    <main>
+      <section class="background-img">
+        <div class="filter"></div>
+        <h3>休閒空間，特殊假期<br />安排一趟日本旅遊行程，放鬆身心</h3>
+      </section>
+      <section class="info-circles">
+        <h3>遊玩主題</h3>
+        <div class="circles">
+          <div class="circle">
+            <img src="./images/北海道雪景.jpg" alt="北海道雪景">
+            <p>北海道雪景，美不勝收</p>
+          </div>
+          <div class="circle">
+            <img src="./images/日本壽司.jpg" alt="日本壽司">
+            <p>日本道地壽司與美食</p>
+          </div>
+          <div class="circle">
+            <img src="./images/富士山.jpg" alt="富士山">
+            <p>富士山風景與溫泉</p>
+          </div>
+          <div class="circle">
+            <img src="./images/清水寺.jpg" alt="清水寺">
+            <p>北海道雪景，美不勝收</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      setInterval(() => {
+        let topBackground = document.querySelector("section.background-img");
+        if (topBackground.style.backgroundImage == 'url("../images/日本櫻花.jpg")'){
+          topBackground.style.backgroundImage = 'url("../images/京都古城.jpg")';
+        }else if(topBackground.style.backgroundImage == 'url("../images/京都古城.jpg")'){
+          topBackground.style.backgroundImage = 'url("../images/大阪街頭.jpg")';
+        }else if(topBackground.style.backgroundImage == 'url("../images/大阪街頭.jpg")'){
+          topBackground.style.backgroundImage = 'url("../images/奶茶1.jpg")'
+        }else{topBackground.style.backgroundImage = 'url("../images/日本櫻花.jpg")'}
+      }, 2500)
+    </script>
   </body>
 </html>
