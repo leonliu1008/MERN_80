@@ -33,6 +33,11 @@ body {
     flex-wrap: wrap;
     align-items: center;
 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 10px 6px -6px #777;
+
     section.Logo {
       flex: 2 1 400px;
       // border: 2px solid green;
@@ -130,6 +135,10 @@ body {
               border: 4px solid $themeColor;
             }
           }
+
+          p {
+            font-weight: 700;
+          }
         }
       }
     }
@@ -165,6 +174,34 @@ body {
       }
     }
   }
+
+  footer {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    section.logo {
+      img {
+        width: 20vw;
+      }
+      h3 {
+        font-size: 2.5rem;
+      }
+    }
+
+    section.links {
+      margin: 2rem;
+    }
+    a {
+      margin: 0rem 1rem;
+      img {
+        width: 5vh;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -187,4 +224,24 @@ body {
       }
     }
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $themeColor;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(218, 50, 181);
 }
