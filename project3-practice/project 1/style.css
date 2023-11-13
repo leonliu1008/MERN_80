@@ -1,0 +1,227 @@
+/* 使用外部字形(清松手寫體) */
+@font-face {
+  font-family: myFont;
+  src: url(./清松手寫體1.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* 在此"優先"使用外部字形 */
+  font-family: "myFont", DFkai-sb, sens-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header div.top {
+  padding: 1rem;
+  background-image: url(./images/background.png);
+  /* 將背景圖延伸 */
+  background-size: cover;
+}
+
+header div.top h1 {
+  color: rgb(10, 10, 234);
+  font-size: 2.5rem;
+}
+
+header div.top h3 {
+  font-size: 1em;
+  color: rgb(41, 149, 48);
+}
+
+header nav {
+  background-color: black;
+}
+
+header nav ul {
+  display: flex;
+  /* 將list標籤 "開頭圓點" 關閉 */
+  list-style-type: none;
+}
+
+header nav ul li {
+  padding: 0.5em 1em;
+}
+
+header nav ul li a {
+  color: aliceblue;
+  font-size: 22px;
+
+  /* 將超連結文字底下的"橫線"消除 */
+  text-decoration: none;
+  /* 控制改變的delayTime */
+  transition: all 0.5s ease;
+}
+
+header nav ul li a:hover {
+  color: yellow;
+}
+
+.active {
+  color: yellow;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main section {
+  padding: 1rem;
+}
+
+main.no-flex {
+  display: block;
+}
+
+section.left {
+  flex: 1 1 200px;
+}
+
+section.left img {
+  /* 在此section 裡面的寬度的% */
+  width: 90%;
+}
+
+section.right {
+  flex: 4 1 500px;
+}
+
+section.left h3 {
+  margin-bottom: 1rem;
+}
+
+section.left table {
+  margin-top: 1rem;
+}
+
+section.left table,
+section.left table td {
+  padding: 0.25rem;
+}
+
+section.right h3 {
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+p {
+  padding: 0.5rem 0rem;
+}
+
+section.right ul {
+  margin-left: 2.5rem;
+}
+
+.player {
+  margin: 2rem;
+  border: 3px solid burlywood;
+  padding: 0.5rem;
+}
+
+.player h4 {
+  font-size: 1.5rem;
+  color: rgb(0, 90, 91);
+}
+
+.player h5 {
+  font-size: 1.1rem;
+  color: rgb(6, 120, 120);
+}
+
+div.japan {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+div.japan div.image {
+  flex: 1 1 300px;
+  display: flex;
+  align-items: center;
+}
+
+div.japan div.image img {
+  width: 100%;
+}
+
+div.japan div.info {
+  flex: 3 1 600px;
+  padding: 2rem;
+}
+
+div.competition {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+div.competition div.text {
+  flex: 5 1 300px;
+  padding: 1rem;
+}
+
+#piechart {
+  flex: 1 1 300px;
+}
+
+div.competition div.text h3 {
+  font-size: 2rem;
+  color: rgb(12, 122, 92);
+}
+
+section.taiwan h3 {
+  font-size: 2rem;
+  color: rgb(12, 122, 92);
+}
+
+section.taiwan ul {
+  margin-left: 2rem;
+}
+
+section.taiwan {
+  position: relative;
+}
+
+main div.taiwan {
+  flex: 1 1 700;
+  position: absolute;
+  z-index: -1;
+}
+
+.china h3 {
+  color: rgb(12, 122, 92);
+  font-size: 2rem;
+}
+
+.china table,
+.china th,
+.china td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 2px 4px;
+}
+
+.china table {
+  min-width: 1000px;
+}
+
+.china th {
+  background-color: rgb(86, 224, 192);
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
