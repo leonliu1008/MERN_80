@@ -13,6 +13,11 @@
       }
 
       .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         max-width: 600px;
         margin: 50px auto;
         padding: 20px;
@@ -40,6 +45,22 @@
         font-weight: bold;
       }
 
+      div.home {
+        color: white;
+        text-align: center;
+        /* border: 2px solid black; */
+        right: 0;
+        background-color: rgb(0, 89, 255);
+        border-radius: 20px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 50%;
+      }
+
+      div.home a {
+        color: white;
+      }
+
       a:hover {
         text-decoration: underline;
       }
@@ -54,6 +75,12 @@
         padding: 0rem 0.5rem;
         width: 50%;
         height: 50%;
+      }
+
+      @media screen and (max-width: 600px) {
+        div.home {
+          width: 60%; /* 調整按鈕寬度 */
+        }
       }
     </style>
   </head>
@@ -74,6 +101,7 @@
           ><img src="./project 2/Icons/facebook.svg" alt="facebook"
         /></a>
       </section>
+      <div class="home"><a target="_blank" href="./index.html">首頁</a></div>
     </div>
   </body>
 </html>
