@@ -24,6 +24,10 @@ body nav ul li {
   list-style: none;
   margin: 1rem;
 }
+body nav ul li:hover {
+  background-color: rgb(173, 248, 244);
+  border-radius: 10px;
+}
 body nav ul li a {
   color: rgba(0, 0, 0, 0.801);
   text-decoration: none;

@@ -1,0 +1,42 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* font-family: Arial, sans-serif; */
+  background-color: rgb(173, 248, 244);
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0;
+  color: rgb(0, 89, 255);
+}
+
+main {
+  padding: 20px;
+}
+
+.bio {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: rgb(0, 89, 255);
+}
+
+p {
+  color: #333;
+}
+
+p::first-letter {
+  margin-left: 2rem; /* 調整第一個字的左邊距 */
+}
