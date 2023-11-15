@@ -108,7 +108,7 @@ body main section.resume {
 }
 body main section.resume section.table {
   --bs-table-bg: none;
-  flex: 5 0 500px;
+  flex: 5 1 500px;
   padding: 0.5rem;
 }
 body main section.resume section.table table {
@@ -167,9 +167,6 @@ body main section.resume section.picture div.blueRect3 {
 @media screen and (max-width: 800px) {
   body main section.about-me section.description {
     width: 80%;
-  }
-  body main section.resume {
-    overflow-x: auto;
   }
   body main section.resume section.picture div.blueRect,
   body main section.resume section.picture div.blueRect2,

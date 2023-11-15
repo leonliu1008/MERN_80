@@ -119,7 +119,8 @@ body {
       section.table {
         // 將table 遮擋關閉(boostrap)
         --bs-table-bg: none;
-        flex: 5 0 500px;
+        // 將shink 改成0 就可以有不壓縮 ,然後控制overflow,手機看
+        flex: 5 1 500px;
         // border: 2px solid red;
         padding: 0.5rem;
         table {
@@ -195,8 +196,8 @@ body {
       }
 
       section.resume {
-        // 進入手機模式的話,將超過螢幕的部份=,可以用手滑來左右觀看
-        overflow-x: auto;
+        // 進入手機模式的話,將超過螢幕的部份,可以用手滑來左右觀看
+        // overflow-x: auto;
         section.picture {
           div.blueRect,
           div.blueRect2,
