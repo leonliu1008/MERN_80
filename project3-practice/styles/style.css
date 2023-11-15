@@ -16,6 +16,9 @@ h6 {
 
 body nav {
   background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 body nav ul {
   display: flex;
@@ -82,6 +85,7 @@ body main section.about-me {
   padding: 5rem 0rem;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 body main section.about-me section.description {
   width: 50%;
@@ -155,4 +159,23 @@ body main section.resume section.picture div.blueRect3 {
   top: 0px;
   left: -100px;
   z-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+  body main section.about-me section.description {
+    width: 80%;
+  }
+  body main section.resume section.picture div.blueRect,
+  body main section.resume section.picture div.blueRect2,
+  body main section.resume section.picture div.blueRect3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 560px) {
+  body nav {
+    position: static;
+  }
+  body nav ul {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */

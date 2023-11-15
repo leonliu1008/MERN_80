@@ -19,6 +19,9 @@ h6 {
 body {
   nav {
     background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 5;
     ul {
       display: flex;
       li {
@@ -90,6 +93,7 @@ body {
       padding: 5rem 0rem;
       display: flex;
       justify-content: center;
+      align-items: center;
 
       section.description {
         width: 50%;
@@ -173,6 +177,39 @@ body {
           left: -100px;
           z-index: -1;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    main {
+      section.about-me {
+        section.description {
+          width: 80%;
+        }
+      }
+
+      section.resume {
+        section.picture {
+          div.blueRect,
+          div.blueRect2,
+          div.blueRect3 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  body {
+    nav {
+      position: static;
+      ul {
+        flex-direction: column;
       }
     }
   }
