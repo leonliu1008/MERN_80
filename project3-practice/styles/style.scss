@@ -17,6 +17,8 @@ h6 {
 }
 
 body {
+  // 將畫面最下面的長方形超過的都隱藏
+  overflow-x: hidden;
   nav {
     background-color: white;
     position: sticky;
@@ -115,8 +117,9 @@ body {
       flex-wrap: wrap;
       padding: 1rem;
       section.table {
+        // 將table 遮擋關閉(boostrap)
         --bs-table-bg: none;
-        flex: 5 1 500px;
+        flex: 5 0 500px;
         // border: 2px solid red;
         padding: 0.5rem;
         table {
@@ -192,6 +195,8 @@ body {
       }
 
       section.resume {
+        // 進入手機模式的話,將超過螢幕的部份=,可以用手滑來左右觀看
+        overflow-x: auto;
         section.picture {
           div.blueRect,
           div.blueRect2,
