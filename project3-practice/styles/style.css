@@ -178,4 +178,9 @@ body main section.resume section.picture div.blueRect3 {
   body nav ul {
     flex-direction: column;
   }
+}
+@media screen and (max-width: 600px) {
+  body main section.main-area div.info {
+    left: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
