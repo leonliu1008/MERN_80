@@ -1,3 +1,4 @@
+//  先製作公式,使用printStars(3, 1); 可以看到金字塔頂層
 const printStars = (space, star) => {
   let resule = "";
   for (let i = 0; i < space; i++) {
