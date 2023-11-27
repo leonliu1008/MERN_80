@@ -8,9 +8,9 @@ const isSubsequence = (str1, str2) => {
   while (j < str2.length) {
     if (str1[i] == str2[j]) {
       i++;
-      j++;
+      console.log(str2[j]);
     }
-    if ((i = str1.length)) {
+    if (i >= str1.length) {
       return true;
     }
     j++;
@@ -19,7 +19,7 @@ const isSubsequence = (str1, str2) => {
   return false;
 };
 
-console.log(isSubsequence("", "Hello")); // true
-console.log(isSubsequence("book", "brooklyn")); // true
-console.log(isSubsequence("CAATCGA", "TCAATCAGGATCCGCTGA")); // true
+// console.log(isSubsequence("", "Hello")); // true
+// console.log(isSubsequence("book", "brooklyn")); // true
+// console.log(isSubsequence("CAATCGA", "TCAATCAGGATCCGCTGA")); // true
 console.log(isSubsequence("AATTAA", "TCAATCAGGATCCGCTGA")); // false
