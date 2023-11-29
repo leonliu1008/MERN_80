@@ -9,15 +9,17 @@
   pointer-events: none;
 }
 
+/*泡泡的大小*/
 .bubble {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 50%; /*設定成原形*/
   position: absolute;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
     inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
 }
 
+/*製作泡泡動畫,由下而上*/
 @keyframes animateBubble {
   0% {
     margin-top: 1000px;
@@ -27,6 +29,7 @@
   }
 }
 
+/*製作泡泡動畫,由左至右(搖擺)*/
 @keyframes sideWays {
   0% {
     margin-left: 0px;
@@ -41,7 +44,7 @@
     sideWays 2s ease-in-out infinite alternate;
   left: -5%;
   top: 5%;
-  transform: scale(0.6);
+  transform: scale(0.6); /*設定泡泡大小*/
 }
 .x2 {
   animation: animateBubble 20s linear infinite,
