@@ -29,17 +29,43 @@ body {
       li {
         list-style: none;
         margin: 1rem;
+        // border: 2px solid black;
         &:hover {
           background-color: $themeColor2;
-          border-radius: 10px;
+          border-radius: 5px;
         }
         a {
           color: rgba(0, 0, 0, 0.801);
           text-decoration: none;
           transition: all 0.3s ease;
+          padding: 3px;
           &:hover {
             color: rgb(0, 89, 255);
             font-weight: 700;
+          }
+        }
+
+        // 以下為隱藏式選單
+        .sub-menu {
+          // border: 2px solid rgb(0, 89, 255);
+          justify-content: start;
+          position: absolute;
+          flex-direction: column;
+          padding-left: 0; /* 清除左側間距 */
+
+          .works {
+            margin: 0.5rem 0rem;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            // border: 2px solid red;
+            position: relative;
+            display: none; //  常駐將選單隱藏
+          }
+        }
+        &:hover {
+          .works {
+            // border: 3px solid green;
+            display: block; //  將選單顯示
           }
         }
       }
@@ -216,6 +242,11 @@ body {
       position: static;
       ul {
         flex-direction: column;
+        li {
+          .sub-menu {
+            flex-direction: row;
+          }
+        }
       }
     }
   }

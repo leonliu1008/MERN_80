@@ -32,16 +32,33 @@ body nav ul li {
 }
 body nav ul li:hover {
   background-color: rgb(173, 248, 244);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 body nav ul li a {
   color: rgba(0, 0, 0, 0.801);
   text-decoration: none;
   transition: all 0.3s ease;
+  padding: 3px;
 }
 body nav ul li a:hover {
   color: rgb(0, 89, 255);
   font-weight: 700;
+}
+body nav ul li .sub-menu {
+  justify-content: start;
+  position: absolute;
+  flex-direction: column;
+  padding-left: 0; /* 清除左側間距 */
+}
+body nav ul li .sub-menu .works {
+  margin: 0.5rem 0rem;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  position: relative;
+  display: none;
+}
+body nav ul li:hover .works {
+  display: block;
 }
 body main section.main-area {
   min-height: 70vh;
@@ -180,6 +197,9 @@ body main section.resume section.picture div.blueRect3 {
   }
   body nav ul {
     flex-direction: column;
+  }
+  body nav ul li .sub-menu {
+    flex-direction: row;
   }
 }
 @media screen and (max-width: 600px) {
