@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sample Form</title>
+  </head>
+  <body>
+    <form action="/submit" method="POST">
+      <!-- 文字輸入欄位 -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <!-- 密碼輸入欄位 -->
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+
+      <!-- 選擇欄位 -->
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option></select
+      ><br /><br />
+
+      <!-- 多選欄位 -->
+      <label for="interests">Interests:</label><br />
+      <input type="checkbox" id="interests1" name="interests" value="sports" />
+      <label for="interests1">Sports</label><br />
+      <input type="checkbox" id="interests2" name="interests" value="music" />
+      <label for="interests2">Music</label><br /><br />
+
+      <!-- 單選欄位 -->
+      <label for="gender">Gender:</label><br />
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label><br />
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label><br /><br />
+
+      <!-- 提交按鈕 -->
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
