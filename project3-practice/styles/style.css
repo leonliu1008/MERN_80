@@ -60,6 +60,10 @@ body nav ul li .sub-menu .works {
 body nav ul li:hover .works {
   display: block;
 }
+body nav ul li:hover .sub-menu {
+  background-color: white;
+  border-radius: 5px;
+}
 body main section.main-area {
   min-height: 70vh;
   background-color: white;
