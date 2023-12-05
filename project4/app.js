@@ -59,3 +59,56 @@ allButtons.forEach((button) => {
     e.preventDefault();
   });
 });
+
+/**
+ * 選擇select內的OPTION,會改變相對應顏色
+ */
+//  選擇select內的OPTION,會改變相對應顏色
+let allSelects = document.querySelectorAll("select");
+allSelects.forEach((select) => {
+  select.addEventListener("change", (e) => {
+    // console.log(e.target);         //  target 就是select
+    // console.log(e.target.value);   // value 就是target裡面所選擇的項目
+    changeColor(e.target);
+  });
+});
+
+//  JavaScript 的 hoisting 特性，它會被提升到程式的頂部,所以上面的forEach可以呼叫以下函式
+//  選擇好學分 改變背景顏色
+const changeColor = (target) => {
+  if (target.value == "A" || target.value == "A-") {
+    target.style.backgroundColor = "lightgreen";
+    target.style.color = "black";
+  } else if (
+    target.value == "B+" ||
+    target.value == "B" ||
+    target.value == "B-"
+  ) {
+    target.style.backgroundColor = "yellow";
+    target.style.color = "black";
+  } else if (
+    target.value == "C+" ||
+    target.value == "C" ||
+    target.value == "C-"
+  ) {
+    target.style.backgroundColor = "orange";
+    target.style.color = "black";
+  } else if (
+    target.value == "D+" ||
+    target.value == "D" ||
+    target.value == "D-"
+  ) {
+    target.style.backgroundColor = "red";
+    target.style.color = "black";
+  } else if (
+    target.value == "F+" ||
+    target.value == "F" ||
+    target.value == "F-"
+  ) {
+    target.style.backgroundColor = "grey";
+    target.style.color = "white";
+  } else {
+    target.style.backgroundColor = "white";
+    target.style.color = "white";
+  }
+};

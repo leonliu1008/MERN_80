@@ -84,6 +84,14 @@ body main section.main-part {
 body main section.main-part h1 {
   font-size: 3rem;
 }
+body main section.main-part div.buttons {
+  width: 20%;
+}
+body main section.main-part div.buttons .btn {
+  width: 5rem;
+  height: 1.5rem;
+  border-radius: 5px;
+}
 body main section.main-part p {
   font-size: 1.15rem;
 }

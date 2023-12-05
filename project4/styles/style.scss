@@ -98,6 +98,16 @@ body {
       h1 {
         font-size: 3rem;
       }
+      div.buttons {
+        // border: 3px solid red;
+        width: 20%;
+        .btn {
+          // border: 3px solid green;
+          width: 5rem;
+          height: 1.5rem;
+          border-radius: 5px;
+        }
+      }
       p {
         font-size: 1.15rem;
       }
