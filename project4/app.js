@@ -44,7 +44,9 @@ setTimeout(() => {
   animation.style.pointerEvents = "none";
 }, 2500);
 
-//  偵測鍵盤按鈕,避免按在input元素 按下Enter之後傳送後端
+/**
+ *  偵測鍵盤按鈕,避免按在input元素 按下Enter之後傳送後端
+ */
 addEventListener("keypress", (e) => {
   //console.log(e); //  印出了 e，也就是事件物件
   if (e.key == "Enter") {
@@ -69,6 +71,7 @@ allSelects.forEach((select) => {
   select.addEventListener("change", (e) => {
     // console.log(e.target);         //  target 就是select
     // console.log(e.target.value);   // value 就是target裡面所選擇的項目
+    setGPA();
     changeColor(e.target);
   });
 });
@@ -109,6 +112,67 @@ const changeColor = (target) => {
     target.style.color = "white";
   } else {
     target.style.backgroundColor = "white";
-    target.style.color = "white";
+    target.style.color = "black";
   }
+};
+
+const convertor = (grade) => {
+  switch (grade) {
+    case "A":
+      return 4.0;
+    case "A-":
+      return 3.7;
+    case "B+":
+      return 3.4;
+    case "B":
+      return 3.0;
+    case "B-":
+      return 2.7;
+    case "C+":
+      return 2.4;
+    case "C":
+      return 2.0;
+    case "C-":
+      return 1.7;
+    case "D+":
+      return 1.4;
+    case "D":
+      return 1.0;
+    case "D-":
+      return 0.7;
+    case "F":
+      return 0.0;
+    default:
+      return 0;
+  }
+};
+
+/**
+ *
+ */
+const setGPA = () => {
+  let formLength = document.querySelectorAll("form").length; //  找form標籤的長度
+  let credits = document.querySelectorAll(".class-credit");
+  let selects = document.querySelectorAll("select");
+  let sum = 0; //  GPA計算用分子
+  let credisSum = 0; //  GPA計算用分母
+
+  for (let i = 0; i < credits.length; i++) {
+    //  判斷得到的數字是否為NaN
+    if (isNaN(credits[i].valueAsNumber)) {
+      credits[i].valueAsNumber = 0;
+    }
+    // console.log(credits[i].valueAsNumber);
+    credisSum += credits[i].valueAsNumber;
+  }
+  // console.log(credisSum); //學分數
+  // console.log(formLength); //科目數量
+  for (let i = 0; i < formLength; i++) {
+    sum += credits[i].valueAsNumber * convertor(selects[i].value);
+  }
+  let result = sum / credisSum;
+  console.log(result);
+  document.getElementById("result-gpa").innerText = result;
+
+  console.log(result);
 };
