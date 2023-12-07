@@ -76,6 +76,21 @@ allSelects.forEach((select) => {
   });
 });
 
+/**
+ * 改變credis(學分數),總計算的值也要跟著改變
+ */
+let credits = document.querySelectorAll(".class-credit");
+credits.forEach((credit) => {
+  credit.addEventListener("change", () => {
+    setGPA();
+  });
+});
+
+let addButton = document.querySelector(".plus-btn");
+addButton.addEventListener("click", () => {});
+/**
+ *    function
+ */
 //  JavaScript 的 hoisting 特性，它會被提升到程式的頂部,所以上面的forEach可以呼叫以下函式
 //  選擇好學分 改變背景顏色
 const changeColor = (target) => {
@@ -147,9 +162,7 @@ const convertor = (grade) => {
   }
 };
 
-/**
- *
- */
+//  計算學分數 與 成績 的 加成
 const setGPA = () => {
   let formLength = document.querySelectorAll("form").length; //  找form標籤的長度
   let credits = document.querySelectorAll(".class-credit");
@@ -159,20 +172,27 @@ const setGPA = () => {
 
   for (let i = 0; i < credits.length; i++) {
     //  判斷得到的數字是否為NaN
-    if (isNaN(credits[i].valueAsNumber)) {
-      credits[i].valueAsNumber = 0;
+    if (!isNaN(credits[i].valueAsNumber)) {
+      credisSum += credits[i].valueAsNumber;
     }
     // console.log(credits[i].valueAsNumber);
-    credisSum += credits[i].valueAsNumber;
   }
   // console.log(credisSum); //學分數
   // console.log(formLength); //科目數量
   for (let i = 0; i < formLength; i++) {
-    sum += credits[i].valueAsNumber * convertor(selects[i].value);
+    if (!isNaN(credits[i].valueAsNumber)) {
+      sum += credits[i].valueAsNumber * convertor(selects[i].value);
+    }
   }
-  let result = sum / credisSum;
+  console.log("sum: " + sum);
+  console.log("credisSum: " + credisSum);
+  let result;
+  //  因為0 除 0 會顯示NaN,所以直接將 result 顯示0.0 ,就不會進行計算
+  if (credisSum == 0) {
+    result = (0.0).toFixed(2);
+  } else {
+    result = (sum / credisSum).toFixed(2); // 只取小數第二位
+  }
   console.log(result);
   document.getElementById("result-gpa").innerText = result;
-
-  console.log(result);
 };
