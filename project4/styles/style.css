@@ -104,8 +104,8 @@ body main section.main-part div.all-inputs form select {
   border-radius: 0.25rem;
 }
 body main section.main-part div.all-inputs form input.class-number,
-body main section.main-part div.all-inputs form .class_type {
-  width: 22%;
+body main section.main-part div.all-inputs form .class-type {
+  width: 24%;
 }
 body main section.main-part div.all-inputs form input.class-credit {
   width: 12%;
