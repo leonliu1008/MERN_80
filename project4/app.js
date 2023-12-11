@@ -205,6 +205,7 @@ addButton.addEventListener("click", () => {
   newDiv.appendChild(newButton);
   newForm.appendChild(newDiv);
   document.querySelector(".all-inputs").appendChild(newForm);
+  newForm.style.animation = "scaleUp 0.5s ease forwards"; //使用scss裡面的scaleUp動畫
 });
 
 /**
