@@ -86,6 +86,9 @@ credits.forEach((credit) => {
   });
 });
 
+/**
+ * 新增form 的按鈕
+ */
 let addButton = document.querySelector(".plus-btn");
 addButton.addEventListener("click", () => {
   let newForm = document.createElement("form");
@@ -206,6 +209,16 @@ addButton.addEventListener("click", () => {
   newForm.appendChild(newDiv);
   document.querySelector(".all-inputs").appendChild(newForm);
   newForm.style.animation = "scaleUp 0.5s ease forwards"; //使用scss裡面的scaleUp動畫
+});
+
+/**
+ * 建立 刪除form的按鈕
+ */
+let allTrach = document.querySelectorAll(".trash-button");
+allTrach.forEach((trash) => {
+  trash.addEventListener("click", (e) => {
+    console.log(e.target.parentElement.parentElement);
+  });
 });
 
 /**
