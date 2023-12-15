@@ -193,11 +193,27 @@ addButton.addEventListener("click", () => {
     changeColor();
   });
 
-  //  5個元素--5
+  //  5個元素--5(垃圾桶)
   let newButton = document.createElement("button");
   newButton.classList.add("trash-button");
   let newItag = document.createElement("i");
   newItag.classList.add("fas", "fa-trash"); // 因Itag的class="fas fa-trash"
+
+  //  監聽新增垃圾桶按鈕的事件
+  newButton.addEventListener("click", (e) => {
+    e.preventDefault(); // 避免按下按鈕交出整個網頁至後端
+    // 將父元素的父元素 指定一個叫"scaleDown"的動畫效果
+    e.target.parentElement.parentElement.style.animation =
+      "scaleDown 0.5s ease forwards";
+    e.target.parentElement.parentElement.addEventListener(
+      "animationend", //  監聽css裡面的"動畫事件"是否完成(@keyframes)
+      () => {
+        console.log("執行");
+        e.target.parentElement.parentElement.remove();
+        setGPA();
+      }
+    );
+  });
 
   //  新增 必須注意DOM的建立順序
   newButton.appendChild(newItag);
@@ -208,16 +224,28 @@ addButton.addEventListener("click", () => {
   newDiv.appendChild(newButton);
   newForm.appendChild(newDiv);
   document.querySelector(".all-inputs").appendChild(newForm);
-  newForm.style.animation = "scaleUp 0.5s ease forwards"; //使用scss裡面的scaleUp動畫
+  newForm.style.animation = "scaleUp 0.5s ease forwards"; //使用scss裡面的scaleUp動畫(由小變大)
 });
 
 /**
  * 建立 刪除form的按鈕
+ * 刪除時出現縮小動畫
+ * 並重新計算一次成績
  */
 let allTrach = document.querySelectorAll(".trash-button");
 allTrach.forEach((trash) => {
   trash.addEventListener("click", (e) => {
-    console.log(e.target.parentElement.parentElement);
+    // console.log(e.target.parentElement.parentElement); //可檢查選取的parentElement
+    // 將父元素的父元素 新增一個 名為remove的class (這樣在css 那邊寫一個.remove 即可馬上影響)
+    e.target.parentElement.parentElement.classList.add("remove");
+    // 選取到的父元素刪除 (因程式跑很快,會直接刪除,而看不到縮小動畫,所以要再寫addEventListener)
+    e.target.parentElement.parentElement.addEventListener(
+      "transitionend", //  transitionend = 當CSS 過度完成時觸發
+      () => {
+        e.target.parentElement.parentElement.remove();
+        setGPA();
+      }
+    );
   });
 });
 

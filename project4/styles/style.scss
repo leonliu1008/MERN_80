@@ -188,6 +188,11 @@ body {
   }
 }
 
+.remove {
+  transform: scale(0); //  縮放原始大小  0=縮到最小(並非消失)
+  transition: all 0.5s ease;
+}
+
 // 定義一個動畫 名為:scaleUp
 @keyframes scaleUp {
   from {
@@ -197,6 +202,16 @@ body {
     transform: scale(1);
   }
 }
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
 @keyframes border_color {
   0% {
     border-color: red;
