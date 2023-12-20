@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>childNodes vs children</title>
+  </head>
+  <body>
+    <div id="parent">
+      <p>段落節點</p>
+      文字節點
+      <span>span元素</span>
+    </div>
+
+    <script>
+      const parentNode = document.getElementById("parent");
+
+      // 使用 childNodes 屬性
+      const childNodes = parentNode.childNodes;
+      console.log("childNodes:", childNodes);
+
+      // 使用 children 屬性
+      const children = parentNode.children;
+      console.log("children:", children);
+    </script>
+  </body>
+</html>
