@@ -1,3 +1,4 @@
+console.log("*************.map****************");
 let langauges2 = ["Java", "C++", "Python", "JavaSctipt"];
 
 let result2 = langauges2.map((lang) => lang.toUpperCase()); // 簡化箭頭函式 就不需要輸入return
@@ -18,6 +19,22 @@ let result = languages.map((lang) => {
 
 console.log(result);
 
+const users = [
+  { id: 1, age: 25 },
+  { id: 2, age: 30 },
+  { id: 3, age: 22 },
+];
+
+let updatedAges = users.map((user) => {
+  return user.age + 5;
+});
+
+console.log(updatedAges);
+
+/**
+ * .find
+ */
+console.log("******.find*******");
 let result3 = languages.find((lang) => {
   return lang.popularity > 9.5;
 });
