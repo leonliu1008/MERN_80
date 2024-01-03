@@ -1,2 +1,1 @@
-# 忽略整個 node_modules 資料夾
-node_modules/
+node_modules
