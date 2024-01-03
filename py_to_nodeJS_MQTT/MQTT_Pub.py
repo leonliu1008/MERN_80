@@ -36,6 +36,14 @@ for i in range(upload_count):
     randomIrr = random.randint(800, 1200)
     randomVal = random.randint(200, 220)
     randomTemp = random.randint(30, 50)
+    
+    randomIrr2 = randomIrr - 20
+    randomVal2 = randomVal - 3
+    randomTemp2 = randomTemp - 1
+
+    randomIrr3 = randomIrr - 30
+    randomVal3 = randomVal - 2
+    randomTemp3 = randomTemp - 2
     current_time = datetime.now()
     date = current_time.strftime("%Y-%m-%d")
     time_now = current_time.strftime("%H:%M:%S")
@@ -46,6 +54,12 @@ for i in range(upload_count):
         "Temp": str(randomTemp),
         "valtage": str(randomVal),
         "Irr": str(randomIrr),
+        "Temp2": str(randomTemp2),
+        "valtage2": str(randomVal2),
+        "Irr2": str(randomIrr2),
+        "Temp3": str(randomTemp3),
+        "valtage3": str(randomVal3),
+        "Irr3": str(randomIrr3),
     }
     json_data = json.dumps(data)  # 轉換為 JSON 格式
 
