@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WIS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./img/extel.png" alt="" />
+      <h1>WIS</h1>
+    </header>
+
+    <div class="container">
+      <div class="column">
+        <h2 class="module">Golden</h2>
+        <div class="info">
+          <h3>日照</h3>
+          <p class="value" id="Irr1">0</p>
+        </div>
+        <div class="info">
+          <h3>溫度</h3>
+          <section>
+            <p class="value" id="temperature1">0</p>
+            <span class="unit">°C</span>
+          </section>
+        </div>
+        <div class="info">
+          <h3>電壓</h3>
+          <section>
+            <p class="value" id="voltage1">0</p>
+            <span class="unit">V</span>
+          </section>
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="module">Clean</h2>
+        <div class="info">
+          <h3>日照</h3>
+          <p class="value" id="Irr1">0</p>
+        </div>
+        <div class="info">
+          <h3>溫度</h3>
+          <section>
+            <p class="value" id="temperature1">0</p>
+            <span class="unit">°C</span>
+          </section>
+        </div>
+        <div class="info">
+          <h3>電壓</h3>
+          <section>
+            <p class="value" id="voltage1">0</p>
+            <span class="unit">V</span>
+          </section>
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="module">Dust</h2>
+        <div class="info">
+          <h3>日照</h3>
+          <p class="value" id="Irr1">0</p>
+        </div>
+        <div class="info">
+          <h3>溫度</h3>
+          <section>
+            <p class="value" id="temperature1">0</p>
+            <span class="unit">°C</span>
+          </section>
+        </div>
+        <div class="info">
+          <h3>電壓</h3>
+          <section>
+            <p class="value" id="voltage1">0</p>
+            <span class="unit">V</span>
+          </section>
+        </div>
+      </div>
+    </div>
+    <section class="time-column">
+      <h2>時間</h2>
+      <p class="value" id="time">00:00:00</p>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

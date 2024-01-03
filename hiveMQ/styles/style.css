@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 9rem;
+}
+header img {
+  left: 0;
+  width: 20rem;
+  height: 7rem;
+  position: absolute;
+}
+header h1 {
+  margin: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(17, 130, 206);
+}
+.container .column {
+  width: 20%;
+  height: 20%;
+  border: 2px solid black;
+  background-color: rgba(243, 228, 18, 0.952);
+  display: flex;
+  flex-direction: column;
+}
+.container .column .module {
+  text-align: center;
+  padding-top: 0;
+  margin-bottom: 20px;
+  position: relative;
+}
+.container .column div h3 {
+  padding: 5px 0;
+  justify-content: center;
+  font-size: large;
+  text-align: center;
+}
+.container .column div section {
+  display: flex;
+  flex-direction: row;
+}
+.container .column div p {
+  justify-content: center;
+  font-size: large;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section p {
+  font-size: large;
+}/*# sourceMappingURL=style.css.map */

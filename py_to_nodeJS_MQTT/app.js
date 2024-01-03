@@ -1,11 +1,12 @@
-const AWS = require("aws-sdk");
-const AWSIoTData = require("aws-iot-device-sdk");
-const AWSConfiguration = require("./aws-configuration.js");
+// const AWS = require("aws-sdk");
+// const AWSIoTData = require("aws-iot-device-sdk");
+// const AWSConfiguration = require("./aws-configuration.js");
 // import { AWS } from "aws-sdk";
 // import { AWSIoTData } from "aws-iot-device-sdk";
 // import { AWSConfiguration } from "./aws-configuration.js";
 
 // Function to update values from AWS IoT Core
+const AWSIoTData = aws - iot - device - sdk;
 const updateValues = (device) => {
   device.subscribe("Wis_01", (err) => {
     if (err) {
