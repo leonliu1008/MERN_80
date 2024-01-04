@@ -12,9 +12,9 @@ const client = mqtt.connect(
 
 // prints a received message
 client.on("message", function (topic, message) {
-  // console.log("Received message:" + String.fromCharCode.apply(null, message)); // need to convert the byte array to string
   let data = JSON.parse(String.fromCharCode.apply(null, message));
-  console.log(data);
+  // console.log(data);
+  // console.log(data.date);
 
   // 在此更新前端數據
   document.getElementById("Irr1").textContent = data.Irr;
@@ -30,7 +30,6 @@ client.on("message", function (topic, message) {
   document.getElementById("voltage3").textContent = data.valtage3;
 
   document.getElementById("time").textContent = data.date;
-  console.log(data.date);
 });
 
 // reassurance that the connection worked
