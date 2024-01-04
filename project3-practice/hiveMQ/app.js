@@ -36,12 +36,20 @@ client.on("message", function (topic, message) {
 // reassurance that the connection worked
 client.on("connect", () => {
   console.log("Connected!");
+  let status = document.querySelector(".status");
+  let online = document.querySelector(".online");
+  status.style.backgroundColor = "lightgreen";
+  online.textContent = "Online";
 });
 
 // prints an error message
 client.on("error", (error) => {
   console.log("連線失敗");
   console.log("Error:", error);
+  let status = document.querySelector(".status");
+  let online = document.querySelector(".online");
+  online.textContent = "Offline";
+  status.style.backgroundColor = "red";
 });
 
 // subscribe and publish to the same topic

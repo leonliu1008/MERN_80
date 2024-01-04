@@ -18,6 +18,20 @@ header {
     // border: 2px solid black;
     margin: 2rem;
   }
+  .status {
+    border: 1px solid gray;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    margin: 1rem 1rem;
+    position: absolute;
+    background-color: lightgreen;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
 }
 .container {
   // border: 3px solid green;
