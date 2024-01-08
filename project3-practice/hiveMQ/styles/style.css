@@ -77,4 +77,26 @@ section {
 }
 section p {
   font-size: large;
+}
+
+@media screen and (max-width: 800px) {
+  body div.container {
+    flex-direction: column;
+    background-color: rgb(255, 0, 0);
+    height: 50vh;
+  }
+  body div.container .column {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  body div.container .column h2 {
+    flex-grow: 1;
+  }
+  body div.container .column div {
+    flex-grow: 3;
+  }
 }/*# sourceMappingURL=style.css.map */
