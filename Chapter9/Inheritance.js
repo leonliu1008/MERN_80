@@ -24,5 +24,5 @@ let leon = new Student("Leon Liu", 38, "IT", 4.0);
 console.log(leon.name);
 console.log(leon.major);
 
-leon.sayHi();
+leon.sayHi(); // 這邊可以使用 Person的sayHi 是因為 有使用 Object.create
 leon.study();
