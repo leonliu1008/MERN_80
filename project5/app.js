@@ -63,7 +63,7 @@ function draw() {
   ctx.fillStyle = "black"; //設定填充顏色為黑色
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  //  背景(蛇的身體)設定完之後,以下畫出蛇
+  //  以下畫出蛇,背景(蛇的身體)設定完之後
   // console.log("正在執行draw...");
   for (let i = 0; i < snake.length; i++) {
     //當array是0的時候 就設定顏色(蛇的頭)
@@ -73,6 +73,21 @@ function draw() {
       ctx.fillStyle = "lightblue";
     }
     ctx.strokeStyle = "white"; // 設定外匡顏色(必須先設定外匡)
+
+    // 穿牆功能:
+    if (snake[i].x >= canvas.width) {
+      snake[i].x = 0;
+    }
+    if (snake[i].x < 0) {
+      snake[i].x = canvas.width - unut;
+    }
+    if (snake[i].y >= canvas.height) {
+      snake[i].y = 0;
+    }
+    if (snake[i].y < 0) {
+      snake[i].y = canvas.height - unut;
+    }
+
     // x, y, width, height
     ctx.fillRect(snake[i].x, snake[i].y, unut, unut);
     ctx.strokeRect(snake[i].x, snake[i].y, unut, unut); // 設定外匡
