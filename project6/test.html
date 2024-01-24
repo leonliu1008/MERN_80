@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      canvas {
+        border: 1px solid #000;
+      }
+    </style>
+    <title>Canvas 方塊</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+      // 定義方塊的類別
+      class Square {
+        constructor(context, x, y, size, color) {
+          this.context = context;
+          this.x = x;
+          this.y = y;
+          this.size = size;
+          this.color = color;
+        }
+
+        // 繪製方塊的方法
+        draw() {
+          this.context.fillStyle = this.color;
+          this.context.fillRect(this.x, this.y, this.size, this.size);
+        }
+      }
+
+      // 取得 canvas 元素和其 2D 上下文
+      const canvas = document.getElementById("myCanvas");
+      const context = canvas.getContext("2d");
+
+      // 創建一個方塊陣列
+      const squares = [];
+
+      // 在 canvas 上繪製 30 個不重複位置的橘色方塊
+      for (let i = 0; i < 30; i++) {
+        let isOverlap;
+        let x, y;
+
+        // 確保方塊位置不重複
+        do {
+          isOverlap = false;
+          x = Math.random() * (canvas.width - 50);
+          y = Math.random() * (canvas.height - 50);
+
+          for (const square of squares) {
+            if (
+              x < square.x + square.size &&
+              x + 50 > square.x &&
+              y < square.y + square.size &&
+              y + 50 > square.y
+            ) {
+              isOverlap = true;
+              break;
+            }
+          }
+        } while (isOverlap);
+
+        const size = 50;
+        const color = "orange";
+        const square = new Square(context, x, y, size, color);
+        squares.push(square);
+      }
+
+      // 繪製所有方塊
+      function drawSquares() {
+        context.clearRect(0, 0, canvas.width, canvas.height); // 清除畫布
+        squares.forEach((square) => square.draw());
+      }
+
+      // 呼叫繪製函數
+      drawSquares();
+    </script>
+  </body>
+</html>
