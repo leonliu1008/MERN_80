@@ -30,14 +30,18 @@ class Brick {
      * 來判斷是否執行while
      */
     while (this.isOverlapping()) {
+      // 如果true的話,會再將x與y 隨機產生數值
       this.x = getRandomArbitrary(0, 950);
       this.y = getRandomArbitrary(0, 450);
     }
+    // false 就會將不重複的x與y 加入陣列
     brickArray.push(this);
   }
   // 檢查是否和已存在的磚塊重疊的方法
   isOverlapping() {
+    //使用for..of 將陣列每一個index進行檢查
     for (const brick of brickArray) {
+      // this.x,y會與進來的brickArray每一項進行檢查
       if (
         this.x < brick.x + brick.width &&
         this.x + this.width > brick.x &&
@@ -53,13 +57,23 @@ class Brick {
     ctx.fillStyle = "lightgreen";
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
+
+  touchingBall(ballX, ballY) {
+    // 高階寫法,直接return true或false
+    return (
+      ballX >= this.x - radius &&
+      ballX <= this.x + this.width + radius &&
+      ballY <= this.y + this.height + radius &&
+      ballY >= this.x - radius
+    );
+  }
 }
 
 // 用for 製作所有的磚塊
 for (let i = 0; i < 10; i++) {
   new Brick(getRandomArbitrary(0, 950), getRandomArbitrary(0, 450));
 }
-console.log(brickArray);
+// console.log(brickArray);
 // 觸發滑鼠一定事件
 c.addEventListener("mousemove", (e) => {
   // 將反擊板的 x 隨著滑鼠移動
@@ -67,6 +81,11 @@ c.addEventListener("mousemove", (e) => {
 });
 
 function drawCircle() {
+  // 確認球是否打到磚塊
+  brickArray.forEach((brick) => {
+    if (brick.touchingBall(circle_x, circle_y)) {
+    }
+  });
   // 確認球是否接觸反擊板
   if (
     circle_x >= ground_x - radius &&
