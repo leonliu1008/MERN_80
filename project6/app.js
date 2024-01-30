@@ -11,6 +11,7 @@ let ground_x = 100;
 let ground_y = 500;
 let ground_height = 15;
 let brickArray = [];
+let count = 0;
 
 // 製作隨機數值小技巧:min~max的隨機值(假設min100, max500)
 function getRandomArbitrary(min, max) {
@@ -24,6 +25,7 @@ class Brick {
     this.y = y;
     this.width = 50;
     this.height = 50;
+    this.visible = true; // 控制磚塊的顯示(可見 不可見))
     /**
      * 檢查是否和已存在的磚塊重疊
      * 進入迴圈之前會先執行函式,看函式回應true or false
@@ -64,7 +66,7 @@ class Brick {
       ballX >= this.x - radius &&
       ballX <= this.x + this.width + radius &&
       ballY <= this.y + this.height + radius &&
-      ballY >= this.x - radius
+      ballY >= this.y - radius
     );
   }
 }
@@ -82,8 +84,32 @@ c.addEventListener("mousemove", (e) => {
 
 function drawCircle() {
   // 確認球是否打到磚塊
-  brickArray.forEach((brick) => {
-    if (brick.touchingBall(circle_x, circle_y)) {
+  brickArray.forEach((brick, index) => {
+    if (brick.visible && brick.touchingBall(circle_x, circle_y)) {
+      count++;
+      brick.visible = false;
+      // 改變x,y 方向速度,並且將brick從brickArray中移除
+      if (circle_y >= brick.y + brick.height) {
+        ySpeed *= -1; // 從下方撞擊
+      } else if (circle_y <= brick.y) {
+        ySpeed *= -1; // 從上方撞擊
+      }
+      // 從左方撞擊
+      else if (circle_x <= brick.x) {
+        xSpeed *= -1;
+      } else if (circle_x >= brick.x + brick.width) {
+        xSpeed *= -1; //右方撞擊
+      }
+      // 撞擊之後刪除,brickArray減少之後,在下面會畫出
+      // brickArray.splice(index, 1); // O(n)
+      // if (brickArray.length == 0) {
+      //   alert("遊戲結束");
+      //   clearInterval(game);
+      // }
+      if (count == 10) {
+        alert("遊戲結束");
+        clearInterval(game);
+      }
     }
   });
   // 確認球是否接觸反擊板
@@ -129,7 +155,9 @@ function drawCircle() {
 
   //畫出磚塊
   brickArray.forEach((brick) => {
-    brick.drawBrick();
+    if (brick.visible) {
+      brick.drawBrick();
+    }
   });
 
   // 畫出反擊板
