@@ -21,6 +21,7 @@ console.log("****************************************");
  * 客製化錯誤訊息
  */
 // throw丟
+// throw 可以自訂內容 丟到catch裡面, ex:catch(e) 這樣就可以從e提取throw的內容
 class NotArrayError extends TypeError {
   constructor(message) {
     super(message);
