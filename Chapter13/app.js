@@ -3,6 +3,10 @@ const app = express(); // 會return一個物件,將物件宣告為app
 const port = 3000;
 
 // middlewares
+app.use((req, res, next) => {
+  console.log("正在經過middleware");
+  next();
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -70,7 +74,11 @@ app.post("/address", (req, res) => {
 
 // 防止網址錯誤(一定要放在所有Router的最下面)
 app.get("*", (req, res) => {
-  res.send("<h1>404 你所找的頁面不存在<h1>");
+  // return res object
+  res.status(404).send("<h1>404 你所找的頁面不存在<h1>");
+
+  // 可防止進入404之後其他代碼不會被運行
+  // return res.status(404).send("<h1>404 你所找的頁面不存在<h1>");
 });
 
 app.listen(port, () => {
