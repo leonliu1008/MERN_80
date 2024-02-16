@@ -27,10 +27,13 @@ app.get("/example", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
+//  傳送大量資料(json)
 app.get("/example2", (req, res) => {
   let obj = {
     title: "Web Design",
     website: "udemy",
+    vol: 380,
+    temp: 19,
   };
   res.json(obj);
 });
