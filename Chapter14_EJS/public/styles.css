@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #07adee;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+section {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+table,
+tr,
+th,
+td {
+  border-collapse: collapse;
+  border: 2px solid white;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 0.25rem 0.5rem;
+}
