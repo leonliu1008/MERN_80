@@ -1,4 +1,5 @@
 let balance = 0; // shared resouece
+let mutex = Promise.resolve(); // return a fulfilled promise
 
 const randomDelay = () => {
   // return value is a Promise
@@ -18,23 +19,45 @@ async function saveBalance(value) {
 }
 
 async function sellGrapes() {
-  const balance = await loadBalance();
-  console.log(`賣葡萄之前,帳戶金額為: ${balance}`);
-  const newBalance = balance + 50;
-  await saveBalance(newBalance);
-  console.log(`賣葡萄之後,帳戶金額為: ${newBalance}`);
+  mutex = mutex.then(async () => {
+    const balance = await loadBalance();
+    console.log(`賣葡萄之前,帳戶金額為: ${balance}`);
+    const newBalance = balance + 50;
+    await saveBalance(newBalance);
+    console.log(`賣葡萄之後,帳戶金額為: ${newBalance}`);
+  });
+  return mutex;
 }
 
 async function sellApple() {
-  const balance = await loadBalance();
-  console.log(`賣蘋果之前,帳戶金額為: ${balance}`);
-  const newBalance = balance + 120;
-  await saveBalance(newBalance);
-  console.log(`賣蘋果之後,帳戶金額為: ${newBalance}`);
+  mutex = mutex.then(async () => {
+    const balance = await loadBalance();
+    console.log(`賣蘋果之前,帳戶金額為: ${balance}`);
+    const newBalance = balance + 120;
+    await saveBalance(newBalance);
+    console.log(`賣蘋果之後,帳戶金額為: ${newBalance}`);
+  });
+  return mutex;
+}
+
+async function withdrawMoney(value) {
+  mutex = mutex.then(async () => {
+    const balance = await loadBalance();
+    console.log(`目前金額為: ${balance}`);
+    const newBalance = balance - value;
+    await saveBalance(newBalance);
+    console.log(`領錢之後金額為: ${newBalance}`);
+  });
+  return mutex;
 }
 
 async function main() {
-  await Promise.all([sellGrapes(), sellApple()]);
+  await Promise.all([
+    sellGrapes(),
+    sellApple(),
+    withdrawMoney(100),
+    sellApple(),
+  ]);
   const balance = await loadBalance();
   console.log(`賣葡萄與蘋果之後的金額是: ${balance}`);
 }
