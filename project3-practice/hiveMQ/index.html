@@ -4,86 +4,122 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WIS</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- MQTT Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.min.js"></script>
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <header>
-      <figure>
-        <img src="./img/extel.png" alt="" />
-      </figure>
-      <h1>WIS</h1>
-      <div class="status"><p class="online">Status</p></div>
+    <header class="container">
+      <div class="row">
+        <div class="col-3">
+          <figure>
+            <img src="./img/extel.png" alt="" class="img-fluid" />
+          </figure>
+        </div>
+        <div class="col-6">
+          <h1>WIS</h1>
+        </div>
+        <div class="col-3">
+          <div class="status"><p class="online">Status</p></div>
+        </div>
+      </div>
     </header>
 
     <div class="container">
-      <div class="column">
-        <h2 class="module">Golden</h2>
-        <div class="info">
-          <h3>日照</h3>
-          <p class="value" id="Irr1">0</p>
+      <div class="row">
+        <div class="col">
+          <h2 class="module">Golden</h2>
+          <div class="info">
+            <h3>日照</h3>
+            <p class="value" id="Irr1">0</p>
+          </div>
+          <div class="info">
+            <h3>溫度</h3>
+            <section>
+              <p class="value" id="temperature1">0</p>
+              <span class="unit">°C</span>
+            </section>
+          </div>
+          <div class="info">
+            <h3>電壓</h3>
+            <section>
+              <p class="value" id="voltage1">0</p>
+              <span class="unit">V</span>
+            </section>
+          </div>
         </div>
-        <div class="info">
-          <h3>溫度</h3>
-          <section>
-            <p class="value" id="temperature1">0</p>
-            <span class="unit">°C</span>
-          </section>
-        </div>
-        <div class="info">
-          <h3>電壓</h3>
-          <section>
-            <p class="value" id="voltage1">0</p>
-            <span class="unit">V</span>
-          </section>
-        </div>
-      </div>
 
-      <div class="column">
-        <h2 class="module">Clean</h2>
-        <div class="info">
-          <h3>日照</h3>
-          <p class="value" id="Irr2">0</p>
+        <div class="col">
+          <h2 class="module">Clean</h2>
+          <div class="info">
+            <h3>日照</h3>
+            <p class="value" id="Irr2">0</p>
+          </div>
+          <div class="info">
+            <h3>溫度</h3>
+            <section>
+              <p class="value" id="temperature2">0</p>
+              <span class="unit">°C</span>
+            </section>
+          </div>
+          <div class="info">
+            <h3>電壓</h3>
+            <section>
+              <p class="value" id="voltage2">0</p>
+              <span class="unit">V</span>
+            </section>
+          </div>
         </div>
-        <div class="info">
-          <h3>溫度</h3>
-          <section>
-            <p class="value" id="temperature2">0</p>
-            <span class="unit">°C</span>
-          </section>
-        </div>
-        <div class="info">
-          <h3>電壓</h3>
-          <section>
-            <p class="value" id="voltage2">0</p>
-            <span class="unit">V</span>
-          </section>
-        </div>
-      </div>
 
-      <div class="column">
-        <h2 class="module">Dust</h2>
-        <div class="info">
-          <h3>日照</h3>
-          <p class="value" id="Irr3">0</p>
-        </div>
-        <div class="info">
-          <h3>溫度</h3>
-          <section>
-            <p class="value" id="temperature3">0</p>
-            <span class="unit">°C</span>
-          </section>
-        </div>
-        <div class="info">
-          <h3>電壓</h3>
-          <section>
-            <p class="value" id="voltage3">0</p>
-            <span class="unit">V</span>
-          </section>
+        <div class="col">
+          <h2 class="module">Dust</h2>
+          <div class="info">
+            <h3>日照</h3>
+            <p class="value" id="Irr3">0</p>
+          </div>
+          <div class="info">
+            <h3>溫度</h3>
+            <section>
+              <p class="value" id="temperature3">0</p>
+              <span class="unit">°C</span>
+            </section>
+          </div>
+          <div class="info">
+            <h3>電壓</h3>
+            <section>
+              <p class="value" id="voltage3">0</p>
+              <span class="unit">V</span>
+            </section>
+          </div>
         </div>
       </div>
     </div>
-    <section class="time-column">
+
+    <section class="time-column container">
       <h2>時間</h2>
       <p class="value" id="time">00:00:00</p>
     </section>
