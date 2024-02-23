@@ -3,7 +3,13 @@ const { Schema } = mongoose;
 
 const studentSchema = new Schema({
   name: { type: String, required: true, minlength: 2 },
-  age: { type: Number, default: 12, max: [80, "可能有點太老了哦..."] },
+  age: {
+    type: Number,
+    default: 12,
+    max: [80, "可能有點太老了哦..."],
+    min: [0, "你不是上世紀的人啦..."],
+  },
+  major: { type: String },
   scholarship: {
     merit: {
       type: Number,

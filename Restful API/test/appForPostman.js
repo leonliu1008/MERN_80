@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Student = require("./models/student.js");
+const Student = require("../models/student.js");
 const cors = require("cors");
-const methodOverride = require("method-override");
 const Port = 3000;
 
 mongoose
@@ -19,63 +18,24 @@ mongoose
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
 app.use(cors());
 
 app.get("/students", async (req, res) => {
   try {
     let studentData = await Student.find({}).exec();
-    // return res.send(studentData);
-    return res.render("students", { studentData });
+    return res.send(studentData);
   } catch (e) {
     return res.status(500).send("尋找資料時,發生錯誤");
   }
-});
-
-app.get("/students/new", async (req, res) => {
-  return res.render("new-student-form");
 });
 
 app.get("/students/:_id", async (req, res) => {
   try {
     let { _id } = req.params;
     let foundStudent = await Student.findOne({ _id }).exec();
-    if (foundStudent != null) {
-      return res.render("student-page", { foundStudent });
-    } else {
-      return res.render("student-not-found");
-    }
+    return res.send(foundStudent);
   } catch (e) {
-    // return res.status(400).send("尋找資料時,發生錯誤");
-    return res.status(400).render("error");
-  }
-});
-
-app.get("/students/:_id/edit", async (req, res) => {
-  try {
-    let { _id } = req.params;
-    let foundStudent = await Student.findOne({ _id }).exec();
-    if (foundStudent != null) {
-      return res.render("edit-student", { foundStudent });
-    } else {
-      return res.render("student-not-found");
-    }
-  } catch (e) {
-    return res.status(400).render("error");
-  }
-});
-
-app.get("/students/:_id/delete", async (req, res) => {
-  try {
-    let { _id } = req.params;
-    let foundStudent = await Student.findOne({ _id }).exec();
-    if (foundStudent != null) {
-      return res.render("delete-student", { foundStudent });
-    } else {
-      return res.render("student-not-found");
-    }
-  } catch (e) {
-    return res.status(400).render("error");
+    return res.status(500).send("尋找資料時,發生錯誤");
   }
 });
 
@@ -90,9 +50,14 @@ app.post("/students", async (req, res) => {
       scholarship: { merit, other },
     });
     let saveStudent = await newStudent.save();
-    return res.render("student-save-success", { saveStudent });
+    return res.send({
+      msg: "資料儲存成功",
+      savedObject: saveStudent,
+    });
   } catch (e) {
-    return res.status(400).render("student-save-fail");
+    return res
+      .status(400)
+      .send("儲存資料時,發生錯誤。。。" + `錯誤內容:${e.message}`);
   }
 });
 
@@ -107,7 +72,7 @@ app.put("/students/:_id", async (req, res) => {
       // 所以我們需要根據客戶端提供的數據,更新資料庫的資料
       { new: true, runValidators: true, overwrite: true }
     );
-    return res.render("student-update-success", { newData });
+    return res.send({ msg: "成功更新人員資料!", updateData: newData });
   } catch (e) {
     return res.status(500).send(e.message);
   }
@@ -153,7 +118,7 @@ app.delete("/students/:_id", async (req, res) => {
   try {
     let { _id } = req.params;
     let deleteResult = await Student.deleteOne({ _id });
-    return res.render("delete-success", deleteResult);
+    return res.send(deleteResult);
   } catch (e) {
     return res.status(400).send(e.message);
   }
