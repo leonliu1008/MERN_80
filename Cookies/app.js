@@ -4,6 +4,17 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const flash = require("connect-flash");
+const mongoose = require("mongoose");
+const Student = require("./models/student");
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/exampleDB")
+  .then(() => {
+    console.log("成功連結");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
 // 解析 JSON 數據中間件
 app.use(express.json());
