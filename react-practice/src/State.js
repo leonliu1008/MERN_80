@@ -9,6 +9,7 @@ const State = () => {
 
   const changeNameHandler = () => {
     setName("Kathy女士");
+    setPet("可樂小饅頭");
   };
   return (
     <div className="state">
