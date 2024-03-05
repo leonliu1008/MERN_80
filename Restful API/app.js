@@ -37,7 +37,8 @@ app.use((err, req, res, next) => {
 
 // Home
 app.get("/", (req, res) => {
-  res.render("index");
+  // res.render("index");
+  return res.redirect("/students");
 });
 
 app.listen(Port, () => {
