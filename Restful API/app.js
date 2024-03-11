@@ -5,7 +5,7 @@ const cors = require("cors");
 const methodOverride = require("method-override");
 const studentRoutes = require("./routes/student-routes.js");
 const facultyRoutes = require("./routes/faculty-routes.js");
-const Port = 3000;
+const Port = 8080;
 
 //version : v2
 

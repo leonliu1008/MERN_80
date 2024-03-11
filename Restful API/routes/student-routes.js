@@ -3,9 +3,12 @@ const router = express.Router();
 const Student = require("../models/student.js");
 
 router.get("/", async (req, res) => {
+  console.log("進入get students路由");
   try {
     let studentData = await Student.find({}).exec();
     // return res.send(studentData);
+    console.log(studentData);
+    return res.send(studentData);
     return res.render("students", { studentData });
   } catch (e) {
     // return res.status(500).send("尋找資料時,發生錯誤");
